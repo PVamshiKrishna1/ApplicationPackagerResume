@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vamshi Krishna Pasupunuti - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         * {
             margin: 0;
@@ -593,12 +594,61 @@
             background: var(--primary-dark);
             transform: translateY(-2px);
         }
+
+        .aos-fade {
+            opacity: 0;
+            transition: opacity 0.9s cubic-bezier(0.6, 0.2, 0.1, 1);
+        }
+        .aos-fade.aos-in-view {
+            opacity: 1;
+        }
+
+        .aos-slide-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1), transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1);
+        }
+        .aos-slide-up.aos-in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .aos-zoom-in {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        .aos-zoom-in.aos-in-view {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .aos-flip {
+            opacity: 0;
+            transform: rotateY(90deg);
+            transition: opacity 0.7s, transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1);
+            backface-visibility: hidden;
+        }
+        .aos-flip.aos-in-view {
+            opacity: 1;
+            transform: rotateY(0);
+        }
+
+        .aos-rotate {
+            opacity: 0;
+            transform: rotateZ(-10deg) scale(0.97);
+            transition: opacity 0.7s, transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1);
+        }
+        .aos-rotate.aos-in-view {
+            opacity: 1;
+            transform: rotateZ(0) scale(1);
+        }
     </style>
 </head>
 
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header aos-fade">
         <nav class="nav container">
             <div class="logo">VK</div>
             <ul class="nav-links">
@@ -612,7 +662,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero aos-slide-up">
         <div class="container">
             <div class="hero-content fade-in-up">
                 <h1>Vamshi Krishna Pasupunuti</h1>
@@ -621,26 +671,26 @@
                 </p>
 
                 <div class="hero-stats">
-                    <div class="stat">
+                    <div class="stat aos-zoom-in">
                         <span class="stat-number">120+</span>
                         <span class="stat-label">Apps Deployed</span>
                     </div>
-                    <div class="stat">
+                    <div class="stat aos-zoom-in">
                         <span class="stat-number">99.89%</span>
                         <span class="stat-label">Compliance Rate</span>
                     </div>
-                    <div class="stat">
+                    <div class="stat aos-zoom-in">
                         <span class="stat-number">2.8+</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
                 </div>
 
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">
+                    <a href="#contact" class="btn btn-primary aos-fade">
                         <i class="fas fa-envelope"></i>
                         Get In Touch
                     </a>
-                    <a href="#projects" class="btn btn-secondary">
+                    <a href="#projects" class="btn btn-secondary aos-fade">
                         <i class="fas fa-code"></i>
                         View Projects
                     </a>
@@ -650,13 +700,14 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="section aos-slide-up">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
-                <div class="about-image">
-                    <img src="/me.jfif" alt="Vamsi Krishna Pasupunuti" class="profile-image">          </div>
-                <div class="about-content">
+                <div class="about-image aos-zoom-in">
+                    <img src="/me.jfif" alt="Vamsi Krishna Pasupunuti" class="profile-image">
+                </div>
+                <div class="about-content aos-fade">
                     <h3>Professional Summary</h3>
                     <p class="about-text">
                         Results-driven Computer Science graduate student with 2.8+ years of experience in application
@@ -679,11 +730,12 @@
                         </div>
                         <div class="contact-item">
                             <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/vamshikrishnapasupunuti" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/vamshikrishnapasupunuti" target="_blank"
+                                rel="noopener noreferrer">
                                 <span>LinkedIn Profile</span>
                             </a>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -691,11 +743,11 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section">
+    <section id="skills" class="section aos-slide-up">
         <div class="container">
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-card">
+                <div class="skill-card aos-flip">
                     <h4><i class="fas fa-box"></i> Application Packaging & Deployment</h4>
                     <div class="skill-tags">
                         <span class="skill-tag">PSADT</span>
@@ -706,7 +758,7 @@
                         <span class="skill-tag">Intune</span>
                     </div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card aos-flip">
                     <h4><i class="fas fa-cloud"></i> Cloud & Infrastructure</h4>
                     <div class="skill-tags">
                         <span class="skill-tag">AWS</span>
@@ -715,7 +767,7 @@
                         <span class="skill-tag">Windows Server</span>
                     </div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card aos-flip">
                     <h4><i class="fas fa-code"></i> Programming & Scripting</h4>
                     <div class="skill-tags">
                         <span class="skill-tag">PowerShell</span>
@@ -727,7 +779,7 @@
                         <span class="skill-tag">Database Management</span>
                     </div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card aos-flip">
                     <h4><i class="fas fa-tools"></i> Tools & Platforms</h4>
                     <div class="skill-tags">
                         <span class="skill-tag">Microsoft Office</span>
@@ -741,13 +793,13 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
+    <section id="projects" class="section aos-slide-up">
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <p class="section-subtitle">A collection of projects showcasing my development skills and technical
                 expertise</p>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card aos-rotate">
                     <div class="project-header">
                         <h3 class="project-title">Carpool Application</h3>
                         <p class="project-type">Full-Stack Web Application</p>
@@ -772,7 +824,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card aos-rotate">
                     <div class="project-header">
                         <h3 class="project-title">Book Management System</h3>
                         <p class="project-type">Frontend & Backend</p>
@@ -801,7 +853,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card aos-rotate">
                     <div class="project-header">
                         <h3 class="project-title">Inventory Management</h3>
                         <p class="project-type">Business Application</p>
@@ -826,7 +878,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card aos-rotate">
                     <div class="project-header">
                         <h3 class="project-title">Photo Collection App</h3>
                         <p class="project-type">Media Management</p>
@@ -851,7 +903,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card aos-rotate">
                     <div class="project-header">
                         <h3 class="project-title">Message Application</h3>
                         <p class="project-type">Communication Platform</p>
@@ -876,7 +928,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card aos-rotate">
                     <div class="project-header">
                         <h3 class="project-title">IoT Smart Vehicle Speed Controller</h3>
                         <p class="project-type">Research Publication</p>
@@ -904,11 +956,11 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section">
+    <section id="experience" class="section aos-slide-up">
         <div class="container">
             <h2 class="section-title">Professional Experience</h2>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item aos-slide-up">
                     <div class="timeline-header">
                         <div>
                             <h3 class="timeline-title">Regular IT Student Technician</h3>
@@ -926,7 +978,7 @@
                     </ul>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item aos-slide-up">
                     <div class="timeline-header">
                         <div>
                             <h3 class="timeline-title">Engineer - Cloud & Infrastructure Services</h3>
@@ -948,7 +1000,7 @@
                     </ul>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item aos-slide-up">
                     <div class="timeline-header">
                         <div>
                             <h3 class="timeline-title">Graduate Engineer Trainee</h3>
@@ -969,7 +1021,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section section">
+    <section id="contact" class="contact-section section aos-fade">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <p class="section-subtitle">
@@ -979,22 +1031,22 @@
             </p>
 
             <div class="contact-cards">
-                <div class="contact-card">
+                <div class="contact-card aos-zoom-in">
                     <i class="fas fa-envelope"></i>
                     <h4>Email</h4>
                     <p>vamsi.pasupunuti@gmail.com</p>
                 </div>
-                <div class="contact-card">
+                <div class="contact-card aos-zoom-in">
                     <i class="fas fa-phone"></i>
                     <h4>Phone</h4>
                     <p>+1 (806) 313-8008</p>
                 </div>
-                <div class="contact-card">
+                <div class="contact-card aos-zoom-in">
                     <i class="fas fa-map-marker-alt"></i>
                     <h4>Location</h4>
                     <p>Edmond, Oklahoma<br>Willing to relocate</p>
                 </div>
-                <div class="contact-card">
+                <div class="contact-card aos-zoom-in">
                     <i class="fas fa-graduation-cap"></i>
                     <h4>Status</h4>
                     <p>F-1 Student Visa<br>Eligible for OPT</p>
@@ -1002,11 +1054,11 @@
             </div>
 
             <div class="cta-buttons">
-                <a href="mailto:vamsi.pasupunuti@gmail.com" class="btn btn-primary">
+                <a href="mailto:vamsi.pasupunuti@gmail.com" class="btn btn-primary aos-fade">
                     <i class="fas fa-envelope"></i>
                     Send Email
                 </a>
-                <a href="tel:+18063138008" class="btn btn-secondary">
+                <a href="tel:+18063138008" class="btn btn-secondary aos-fade">
                     <i class="fas fa-phone"></i>
                     Call Now
                 </a>
@@ -1053,7 +1105,24 @@
             });
         });
 
-        // Add fade-in animation on scroll
+        // Animate on scroll logic
+        function animateOnScroll() {
+            const animatedElems = document.querySelectorAll('.aos-fade, .aos-slide-up, .aos-zoom-in, .aos-flip, .aos-rotate');
+            const windowHeight = window.innerHeight;
+            animatedElems.forEach(elem => {
+                const rect = elem.getBoundingClientRect();
+                if (rect.top <= windowHeight - 80 && rect.bottom >= 0) {
+                    elem.classList.add('aos-in-view');
+                } else {
+                    elem.classList.remove('aos-in-view');
+                }
+            });
+        }
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('resize', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Existing IntersectionObserver for fade-in-up on sections
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1067,7 +1136,6 @@
             });
         }, observerOptions);
 
-        // Observe all sections
         document.querySelectorAll('.section').forEach(section => {
             observer.observe(section);
         });
@@ -1076,8 +1144,6 @@
         const createMobileMenu = () => {
             const nav = document.querySelector('.nav');
             const navLinks = document.querySelector('.nav-links');
-
-            // Create hamburger button
             const hamburger = document.createElement('button');
             hamburger.innerHTML = '<i class="fas fa-bars"></i>';
             hamburger.className = 'hamburger';
@@ -1092,15 +1158,11 @@
                     display: block;
                 }
             `;
-
             nav.appendChild(hamburger);
-
             hamburger.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
             });
         };
-
-        // Initialize mobile menu
         createMobileMenu();
 
         // Add some interactive effects
@@ -1108,7 +1170,6 @@
             card.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-8px)';
             });
-
             card.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0)';
             });
@@ -1118,7 +1179,6 @@
         const typeWriter = (element, text, speed = 100) => {
             let i = 0;
             element.innerHTML = '';
-
             const timer = setInterval(() => {
                 if (i < text.length) {
                     element.innerHTML += text.charAt(i);
@@ -1128,8 +1188,6 @@
                 }
             }, speed);
         };
-
-        // Uncomment to enable typing effect
         window.addEventListener('load', () => {
             const heroTitle = document.querySelector('.hero-content h1');
             const originalText = heroTitle.textContent;
