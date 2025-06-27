@@ -209,17 +209,15 @@
 
         /* About Section */
         .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-image {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
     align-items: center;
+    text-align: center;
+    animation: fadeInUp 1s ease-out both;
 }
+
+    
 
 
         .about-content h3 {
@@ -237,7 +235,8 @@
 
         .contact-info {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            flex-direction: row;
             gap: 1rem;
         }
 
@@ -549,21 +548,24 @@
         }
 
         /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
+        @keyframes fadeInUpSmooth {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.fade-in-up-smooth {
+    animation: fadeInUpSmooth 1.2s ease-out both;
+}
 
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease-out;
-        }
 
         /* Scroll to top button */
         .scroll-top {
@@ -680,7 +682,7 @@
                         <span class="stat-label">Compliance Rate</span>
                     </div>
                     <div class="stat aos-zoom-in">
-                        <span class="stat-number">2.8+</span>
+                        <span class="stat-number">3.8+</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
                 </div>
@@ -704,43 +706,22 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
-                <div class="about-image aos-zoom-in">
-                    <img src="/me.jfif" alt="Vamsi Krishna Pasupunuti" class="profile-image">
-                </div>
                 <div class="about-content aos-fade">
                     <h3>Professional Summary</h3>
                     <p class="about-text">
-                        Results-driven Computer Science graduate student with 2.8+ years of experience in application
-                        packaging, SCCM administration, and cloud infrastructure services. Currently completing Master's
-                        in Computer Science (graduating August 15, 2025) while seeking opportunities in Application
-                        Packaging, SCCM Administration, and Software Engineering roles.
+                        I am a results-oriented graduate student in Computer Science with over 2.8 years of hands-on
+                        experience in enterprise-level application packaging, SCCM (System Center Configuration Manager)
+                        administration, and cloud infrastructure services. My career is marked by a strong focus on
+                        automation, compliance, and seamless software deployment using PowerShell scripting and modern
+                        packaging techniques. I am currently pursuing my Master’s in Computer Science, graduating in August
+                        2025, and actively seeking full-time roles in Application Packaging, SCCM Administration, or
+                        Software Engineering.
                     </p>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>vamsi.pasupunuti@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+1 (806) 313-8008</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Edmond, Oklahoma</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/vamshikrishnapasupunuti" target="_blank"
-                                rel="noopener noreferrer">
-                                <span>LinkedIn Profile</span>
-                            </a>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- Skills Section -->
     <section id="skills" class="section aos-slide-up">
