@@ -40,6 +40,23 @@
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
+        /* Dark Mode Variables */
+        [data-theme="dark"] {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --accent: #ff6b6b;
+            --accent-dark: #4ecdc4;
+            --text-primary: #ffffff;
+            --text-secondary: #b8c5d6;
+            --text-light: #8892a0;
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16213e;
+            --bg-card: #0f0f23;
+            --border: #2a2d3a;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
@@ -89,6 +106,26 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
+        }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background: var(--bg-secondary);
+            transform: scale(1.1);
         }
 
         .logo {
@@ -835,9 +872,10 @@
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
-
-
             </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
         </nav>
     </header>
 
@@ -1230,64 +1268,88 @@
 
 
     <!-- Experience Section -->
+
     <section id="experience" class="section aos-slide-up">
         <div class="container">
             <h2 class="section-title">Professional Experience</h2>
             <div class="timeline">
+    
                 <div class="timeline-item aos-slide-up">
                     <div class="timeline-header">
                         <div>
-                            <h3 class="timeline-title">Regular IT Student Technician</h3>
-                            <p>Part Time</p>
+                            <h3 class="timeline-title">Regular Student IT Technician</h3>
+                            <p class="timeline-type">Part-Time Position</p>
                             <p class="timeline-company">University of Central Oklahoma</p>
                         </div>
                         <span class="timeline-duration">Feb 2023 - May 2024</span>
                     </div>
                     <ul class="timeline-achievements">
-                        <li>Managed complete IT asset lifecycle including imaging, updating, and retiring machines</li>
-                        <li>Provided comprehensive technical support for software, hardware, and account-related issues
-                        </li>
-                        <li>Administered Active Directory and Organizational Unit (OU) management</li>
-                        <li>Handled ticket management system for efficient issue resolution</li>
+                        <li><strong>Asset Lifecycle Management:</strong> Maintained comprehensive asset inventory and
+                            managed complete machine lifecycle including imaging, updating, and retiring devices</li>
+                        <li><strong>Technical Support Excellence:</strong> Provided multi-tier technical support for
+                            software, hardware, and account-related issues to faculty, staff, and students</li>
+                        <li><strong>System Administration:</strong> Administered Active Directory and organized
+                            Organizational Units (OUs) to support efficient user and device management</li>
+                        <li><strong>Incident Management:</strong> Managed and resolved technical tickets using structured
+                            ticket management system, ensuring timely resolution and user satisfaction</li>
                     </ul>
                 </div>
-
+    
                 <div class="timeline-item aos-slide-up">
                     <div class="timeline-header">
                         <div>
                             <h3 class="timeline-title">Engineer - Cloud & Infrastructure Services</h3>
-                            <p class="timeline-company">LTI - Larsen & Toubro Infotech (now LTIMindtree)</p>
+                            <p class="timeline-type">Full-Time Position</p>
+                            <p class="timeline-company">LTI - Larsen & Toubro Infotech</p>
                         </div>
                         <span class="timeline-duration">Jun 2021 - Jan 2023</span>
                     </div>
                     <ul class="timeline-achievements">
-                        <li><strong>Application Packaging Excellence:</strong> Created and deployed 120+ applications
-                            using PSADT and Advanced Installer</li>
-                        <li><strong>Security Compliance Leadership:</strong> Achieved 99.89% compliance on security
-                            patches across 14,500+ machines</li>
-                        <li><strong>Cost Optimization:</strong> Created Bentley V8i removal packages securing additional
-                            license discounts</li>
-                        <li><strong>License Migration:</strong> Developed 35+ migration packages during organizational
-                            restructuring</li>
-                        <li><strong>MSIX Innovation:</strong> Created 20+ MSIX packages with App Attach deployment
-                            strategies</li>
+                        <li><strong>Modern Application Packaging:</strong> Developed and deployed 20+ MSIX packages with App
+                            Attach technology to enhance application delivery in Microsoft-based environments</li>
+                        <li><strong>Security Compliance Leadership:</strong> Deployed Autodesk Log4NET vulnerability fix
+                            packages to 14,570+ machines, achieving 99.89% compliance rate and reinforcing IT security
+                            standards</li>
+                        <li><strong>Enterprise License Management:</strong> Constructed 35+ license migration packages for
+                            various applications, receiving senior leadership commendation for prompt completion and quality
+                            delivery</li>
+                        <li><strong>Application Development & Testing:</strong> Created MSI packages using Advanced
+                            Installer Re-packager and Master Re-Packager, ensuring optimal deployment and user experience
+                            through comprehensive testing and documentation</li>
+                        <li><strong>Legacy System Management:</strong> Developed uninstallation packages for legacy
+                            applications to streamline software lifecycle management and reduce operational overhead</li>
+                        <li><strong>Incident Resolution:</strong> Addressed critical incident tickets related to application
+                            installation failures, ensuring swift resolution and minimal system downtime</li>
                     </ul>
                 </div>
-
+    
                 <div class="timeline-item aos-slide-up">
                     <div class="timeline-header">
                         <div>
-                            <h3 class="timeline-title">Graduate Engineer Trainee</h3>
+                            <h3 class="timeline-title">Graduate Engineer Trainee - Cloud & Infrastructure Services</h3>
+                            <p class="timeline-type">Trainee Position</p>
                             <p class="timeline-company">LTI - Larsen & Toubro Infotech</p>
                         </div>
                         <span class="timeline-duration">Jun 2020 - Jun 2021</span>
                     </div>
                     <ul class="timeline-achievements">
-                        <li>Completed comprehensive CIS Academy training program</li>
-                        <li>Created 110+ packages using PowerShell Application Deployment Toolkit (PSADT)</li>
-                        <li>Configured packaged applications in SCCM for deployment and advertisement</li>
-                        <li>Created Active Directory groups and configured query rules for available collections</li>
-                        <li>Managed change requests for final deployment to end-users</li>
+                        <li><strong>Professional Development:</strong> Successfully completed comprehensive CIS Academy
+                            Training and was deployed to Black & Veatch Application Packaging Project</li>
+                        <li><strong>Package Development Excellence:</strong> Created 110+ packages using PowerShell
+                            Application Deployment Toolkit (PSADT) over 23 months, consistently meeting client requirements
+                            and project timelines</li>
+                        <li><strong>SCCM Configuration & Deployment:</strong> Configured packaged applications in System
+                            Center Configuration Manager (SCCM) for efficient deployment and advertisement to end-users</li>
+                        <li><strong>Cost Optimization Initiative:</strong> Created Bentley V8i Products removal packages to
+                            uninstall applications from inactive users' machines, reducing license costs and securing
+                            Bentley Connect Apps discounts</li>
+                        <li><strong>Quality Assurance & Process Management:</strong> Performed internal QA testing,
+                            coordinated with Project Managers for User Acceptance Testing (UAT) and pilot user deployment
+                        </li>
+                        <li><strong>Active Directory Management:</strong> Created AD groups and configured query rules for
+                            available collections, ensuring proper user access and application distribution</li>
+                        <li><strong>Change Management:</strong> Created and managed change requests for final deployment to
+                            end-users, ensuring compliance with organizational deployment protocols</li>
                     </ul>
                 </div>
             </div>
@@ -1480,6 +1542,41 @@
 
         window.addEventListener('scroll', updateProgressBar);
         window.addEventListener('load', updateProgressBar);
+
+        // Dark mode toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        // Get saved theme from localStorage or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+
+        // Update button icon based on current theme
+        function updateThemeIcon() {
+            const currentTheme = html.getAttribute('data-theme');
+            const icon = themeToggle.querySelector('i');
+
+            if (currentTheme === 'dark') {
+                icon.className = 'fas fa-sun';
+                themeToggle.setAttribute('aria-label', 'Switch to light mode');
+            } else {
+                icon.className = 'fas fa-moon';
+                themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+            }
+        }
+
+        // Initialize theme icon
+        updateThemeIcon();
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon();
+        });
 
     </script>
 </body>
