@@ -2,1058 +2,21 @@
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vamshi Krishna Pasupunuti - Portfolio</title>
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-            rel="stylesheet">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet">
-        <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .profile-image {
-    width: 100%;
-    max-width: 200px;
-    border-radius: 10%;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamshi Krishna Pasupunuti - Portfolio</title>
 
-        :root {
-            --primary: #1a1a2e;
-            --primary-dark: #16213e;
-            --accent: #667eea;
-            --accent-dark: #764ba2;
-            --text-primary: #1a1a1a;
-            --text-secondary: #666;
-            --text-light: #999;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-card: #ffffff;
-            --border: #e5e7eb;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-        /* Dark Mode Variables */
-        [data-theme="dark"] {
-            --primary: #667eea;
-            --primary-dark: #764ba2;
-            --accent: #ff6b6b;
-            --accent-dark: #4ecdc4;
-            --text-primary: #ffffff;
-            --text-secondary: #b8c5d6;
-            --text-light: #8892a0;
-            --bg-primary: #1a1a2e;
-            --bg-secondary: #16213e;
-            --bg-card: #0f0f23;
-            --border: #2a2d3a;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--bg-secondary);
-            scroll-behavior: smooth;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: var(--shadow);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Progress Bar */
-        .progress-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-dark));
-            width: 0%;
-            transition: width 0.3s ease;
-            z-index: 1001;
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        /* Dark Mode Toggle */
-        .theme-toggle {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .theme-toggle:hover {
-            background: var(--bg-secondary);
-            transform: scale(1.1);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 8rem 0 4rem;
-            text-align: center;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(26, 26, 46, 0.05) 0%, transparent 50%);
-            animation: backgroundShift 20s ease-in-out infinite;
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .floating-shape {
-            position: absolute;
-            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            border-radius: 50%;
-            opacity: 0.1;
-            animation: float 15s ease-in-out infinite;
-        }
-
-        .floating-shape:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-shape:nth-child(2) {
-            width: 60px;
-            height: 60px;
-            top: 20%;
-            right: 15%;
-            animation-delay: 5s;
-        }
-
-        .floating-shape:nth-child(3) {
-            width: 100px;
-            height: 100px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 10s;
-        }
-
-        .floating-shape:nth-child(4) {
-            width: 70px;
-            height: 70px;
-            bottom: 10%;
-            right: 10%;
-            animation-delay: 15s;
-        }
-
-        @keyframes backgroundShift {
-            0%, 100% {
-                transform: translateX(0) translateY(0);
-            }
-            25% {
-                transform: translateX(-10px) translateY(-10px);
-            }
-            50% {
-                transform: translateX(10px) translateY(10px);
-            }
-            75% {
-                transform: translateX(-5px) translateY(5px);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            25% {
-                transform: translateY(-20px) rotate(90deg);
-            }
-            50% {
-                transform: translateY(-40px) rotate(180deg);
-            }
-            75% {
-                transform: translateY(-20px) rotate(270deg);
-            }
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        /* Certifications Section */
-.certifications-grid,
-.education-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.certification-card,
-.education-card {
-    background: var(--bg-card);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
-    border: 1px solid var(--border);
-}
-
-.certification-card:hover,
-.education-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-}
-
-.certification-title,
-.education-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-}
-
-.certification-org,
-.education-institution {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.25rem;
-}
-
-.certification-date,
-.education-date {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin-bottom: 1rem;
-}
-
-.certification-description,
-.education-description {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Sections */
-        .section {
-            padding: 4rem 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--text-primary);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* About Section */
-        .about-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    text-align: justify;
-    animation: fadeInUp 1s ease-out both;
-}
-
-    
-
-
-        .about-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .contact-info {
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-            gap: 1rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .contact-item i {
-            color: var(--primary);
-            width: 20px;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .skill-card h4 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid var(--border);
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--bg-card);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border);
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .project-header {
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-        }
-
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-type {
-            opacity: 0.9;
-            font-size: 0.9rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-            text-align: justify;
-        }
-
-        .project-description {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tag {
-            background: var(--bg-secondary);
-            color: var(--primary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: var(--primary-dark);
-        }
-
-        /* Experience Section */
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            margin-left: 2rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -3rem;
-            top: 2rem;
-            width: 12px;
-            height: 12px;
-            background: var(--primary);
-            border-radius: 50%;
-            border: 3px solid var(--bg-primary);
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .timeline-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .timeline-company {
-            color: var(--text-secondary);
-            margin-bottom: 0.25rem;
-        }
-
-        .timeline-duration {
-            background: var(--bg-secondary);
-            color: var(--text-secondary);
-            padding: 0.25rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .timeline-achievements {
-            list-style: none;
-            padding: 0;
-        }
-
-        .timeline-achievements li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .timeline-achievements li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: var(--bg-primary);
-            text-align: center;
-        }
-
-        .contact-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact-card {
-            background: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .contact-card i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .contact-card h4 {
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .contact-card p {
-            color: var(--text-secondary);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .timeline {
-                padding-left: 1rem;
-            }
-
-            .timeline-item {
-                margin-left: 1rem;
-            }
-
-            .timeline-item::before {
-                left: -1.5rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUpSmooth {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    60% {
-        opacity: 1;
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.fade-in-up-smooth {
-    animation: fadeInUpSmooth 1.2s ease-out both;
-}
-
-
-        /* Scroll to top button */
-        .scroll-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--primary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s ease;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .scroll-top.show {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .scroll-top:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .aos-fade {
-            opacity: 0;
-            transition: opacity 0.9s cubic-bezier(0.6, 0.2, 0.1, 1);
-        }
-        .aos-fade.aos-in-view {
-            opacity: 1;
-        }
-
-        .aos-slide-up {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1), transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1);
-        }
-        .aos-slide-up.aos-in-view {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .aos-zoom-in {
-            opacity: 0;
-            transform: scale(0.95);
-            transition: opacity 0.8s, transform 0.8s;
-        }
-        .aos-zoom-in.aos-in-view {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .aos-flip {
-            opacity: 0;
-            transform: rotateY(90deg);
-            transition: opacity 0.7s, transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1);
-            backface-visibility: hidden;
-        }
-        .aos-flip.aos-in-view {
-            opacity: 1;
-            transform: rotateY(0);
-        }
-
-        .aos-rotate {
-            opacity: 0;
-            transform: rotateZ(-10deg) scale(0.97);
-            transition: opacity 0.7s, transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1);
-        }
-        .aos-rotate.aos-in-view {
-            opacity: 1;
-            transform: rotateZ(0) scale(1);
-        }
-
-        /* Background Shapes */
-        .bg-shapes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .bg-shape {
-            position: absolute;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(102, 126, 234, 0.1));
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
-            animation: moveShape 20s ease-in-out infinite;
-        }
-
-        /* Circle shapes */
-        .shape1, .shape5, .shape9, .shape13 {
-            border-radius: 50%;
-        }
-
-        /* Square/Rectangle shapes */
-        .shape2, .shape6, .shape10, .shape14 {
-            border-radius: 0;
-        }
-
-        /* Triangle shapes */
-        .shape3, .shape7, .shape11 {
-            border-radius: 0;
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        }
-
-        /* Hexagon shapes */
-        .shape4, .shape8, .shape12 {
-            border-radius: 0;
-            clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
-        }
-
-        /* Pentagon shape */
-        .shape15 {
-            border-radius: 0;
-            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-        }
-
-        /* Dark mode background shapes */
-        [data-theme="dark"] .bg-shape {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(76, 205, 196, 0.1));
-            box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
-        }
-
-        @keyframes moveShape {
-            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
-            25% { transform: translate(50px, -30px) rotate(90deg) scale(1.1); }
-            50% { transform: translate(-20px, 40px) rotate(180deg) scale(0.9); }
-            75% { transform: translate(30px, -50px) rotate(270deg) scale(1.2); }
-            100% { transform: translate(0, 0) rotate(360deg) scale(1); }
-        }
-
-        .shape1 {
-            width: 80px;
-            height: 80px;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-            animation-duration: 20s;
-        }
-
-        .shape2 {
-            width: 60px;
-            height: 60px;
-            top: 20%;
-            right: 15%;
-            animation-delay: 5s;
-            animation-duration: 25s;
-        }
-
-        .shape3 {
-            width: 100px;
-            height: 100px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 10s;
-            animation-duration: 18s;
-        }
-
-        .shape4 {
-            width: 70px;
-            height: 70px;
-            bottom: 10%;
-            right: 10%;
-            animation-delay: 15s;
-            animation-duration: 22s;
-        }
-
-        .shape5 {
-            width: 90px;
-            height: 90px;
-            top: 50%;
-            left: 5%;
-            animation-delay: 3s;
-            animation-duration: 19s;
-        }
-
-        .shape6 {
-            width: 50px;
-            height: 50px;
-            top: 30%;
-            right: 5%;
-            animation-delay: 8s;
-            animation-duration: 24s;
-        }
-
-        .shape7 {
-            width: 110px;
-            height: 110px;
-            bottom: 30%;
-            left: 50%;
-            animation-delay: 12s;
-            animation-duration: 21s;
-        }
-
-        .shape8 {
-            width: 65px;
-            height: 65px;
-            top: 70%;
-            right: 20%;
-            animation-delay: 6s;
-            animation-duration: 23s;
-        }
-
-        .shape9 {
-            width: 85px;
-            height: 85px;
-            bottom: 5%;
-            left: 70%;
-            animation-delay: 9s;
-            animation-duration: 17s;
-        }
-
-        .shape10 {
-            width: 75px;
-            height: 75px;
-            top: 5%;
-            right: 30%;
-            animation-delay: 14s;
-            animation-duration: 26s;
-        }
-        /* Additional smaller shapes */
-        .shape11 {
-            width: 40px;
-            height: 40px;
-            top: 15%;
-            left: 40%;
-            animation-delay: 2s;
-            animation-duration: 18s;
-        }
-        .shape12 {
-            width: 35px;
-            height: 35px;
-            top: 60%;
-            right: 40%;
-            animation-delay: 7s;
-            animation-duration: 20s;
-        }
-        .shape13 {
-            width: 30px;
-            height: 30px;
-            bottom: 15%;
-            left: 60%;
-            animation-delay: 11s;
-            animation-duration: 22s;
-        }
-        .shape14 {
-            width: 45px;
-            height: 45px;
-            bottom: 40%;
-            right: 60%;
-            animation-delay: 5s;
-            animation-duration: 19s;
-        }
-        .shape15 {
-            width: 50px;
-            height: 50px;
-            top: 35%;
-            left: 75%;
-            animation-delay: 9s;
-            animation-duration: 21s;
-        }
-    </style>
-    </head>
+    <!-- Your custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
 
     <body>
         <!-- Background Shapes -->
@@ -1097,38 +60,52 @@
 
         <!-- Hero Section -->
         <section class="hero aos-slide-up">
-            <div class="hero-background">
-                <div class="floating-shape"></div>
-                <div class="floating-shape"></div>
-                <div class="floating-shape"></div>
-                <div class="floating-shape"></div>
-            </div>
-            <div class="container">
-                <div class="hero-content fade-in-up">
-                    <h1>Vamshi Krishna Pasupunuti</h1>
-                    <p class="hero-subtitle">
-                        Computer Science Graduate | Application Packaging
-                        Specialist | Cloud Infrastructure Engineer | IT Specialist
-                    </p>
+    <div class="hero-background">
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+    </div>
 
-                    <div class="hero-stats">
-                        <div class="stat aos-zoom-in">
-                            <span class="stat-number">145+</span>
-                            <span class="stat-label">Apps Deployed</span>
-                        </div>
-                        <div class="stat aos-zoom-in">
-                            <span class="stat-number">99.89%</span>
-                            <span class="stat-label">Compliance Rate</span>
-                        </div>
-                        <div class="stat aos-zoom-in">
-                            <span class="stat-number">3.8+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                    </div>
+    <div class="container">
+        <div class="hero-content fade-in-up">
 
+            <h1>Vamshi Krishna Pasupunuti</h1>
+
+            <p class="hero-subtitle">
+                Field Support Engineer L2 | IT Support Engineer | Systems Administrator |
+                Application Packaging Specialist | SCCM/MECM | Microsoft Intune | PowerShell Automation
+            </p>
+
+
+            <div class="hero-stats">
+
+                <div class="stat aos-zoom-in">
+                    <span class="stat-number">145+</span>
+                    <span class="stat-label">Enterprise Apps Packaged</span>
                 </div>
+
+                <div class="stat aos-zoom-in">
+                    <span class="stat-number">14,570+</span>
+                    <span class="stat-label">Endpoints Secured</span>
+                </div>
+
+                <div class="stat aos-zoom-in">
+                    <span class="stat-number">99.89%</span>
+                    <span class="stat-label">Compliance Achieved</span>
+                </div>
+
+                <div class="stat aos-zoom-in">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+
             </div>
-        </section>
+
+
+        </div>
+    </div>
+</section>
 
         <!-- About Section -->
         <section id="about" class="section aos-slide-up">
@@ -1137,26 +114,13 @@
                 <div class="about-grid">
                     <div class="about-content aos-fade">
                         <h3>Professional Summary</h3>
-                        <p class="about-text">
-                            As a Computer Science graduate with over 3.8 years
-                            of hands-on experience specializing in
-                            enterprise-level application packaging, SCCM
-                            administration, and cloud infrastructure services, I
-                            bring a proven track record. My expertise involves
-                            leveraging PowerShell scripting and modern
-                            packaging techniques to automate deployments, ensure
-                            compliance, and streamline software delivery.
-                            My recently completed Master's degree has
-                            significantly deepened my understanding of
-                            system architecture and advanced problem-solving,
-                            allowing me to approach complex challenges with
-                            both practical proficiency and strategic insight. I
-                            am actively seeking full-time roles in
-                            Application Packaging, SCCM Administration, or
-                            Software Engineering, eager to leverage this unique
-                            blend of expertise to drive innovation and
-                            efficiency within an organization.
-                        </p>
+                       <p class="about-text">
+    I am a Computer Science graduate with over 5 years of enterprise IT experience spanning Field Support, Service Desk, Application Packaging, Endpoint Management, and Cloud Infrastructure. Currently working as a Field Support Engineer L2 at ADM via LTIMindtree, I provide advanced technical support for enterprise users by resolving complex incidents, performing root cause analysis, and supporting Windows 10/11, Microsoft 365, Active Directory, SCCM/MECM, Microsoft Intune, ServiceNow, and enterprise endpoint infrastructure in an SLA-driven environment.
+    <br><br>
+    Prior to my current role, I specialized in enterprise application packaging and software deployment, developing over 145 application packages using PSADT, MSIX, Advanced Installer, and SCCM while leading large-scale software deployments, security remediation projects, and PowerShell automation initiatives across thousands of endpoints.
+    <br><br>
+    I recently earned my Master's degree in Computer Science from Oklahoma Christian University, strengthening my expertise in software engineering, cloud technologies, and system architecture. I am passionate about solving complex technical problems, improving operational efficiency through automation, and delivering exceptional customer support. I am currently seeking full-time opportunities in IT Support, Systems Administration, Endpoint Management, Application Packaging, SCCM/MECM, Microsoft Intune, or Cloud Infrastructure where I can contribute both technical expertise and a customer-first approach.
+</p>
                     </div>
                 </div>
             </div>
@@ -1571,6 +535,43 @@
                 <div class="timeline">
 
                     <div class="timeline-item aos-slide-up">
+    <div class="timeline-header">
+        <div>
+            <h3 class="timeline-title">Field Support Engineer L2</h3>
+            <p class="timeline-type">Full-Time Position</p>
+            <p class="timeline-company">ADM (Archer Daniels Midland) via LTIMindtree</p>
+        </div>
+        <span class="timeline-duration">May 2026 – Present</span>
+    </div>
+
+    <ul class="timeline-achievements">
+
+        <li><strong>Incident & Service Request Management:</strong> Resolve high-priority incidents and service requests within SLA targets using ServiceNow, providing enterprise IT support in a managed services (MSP) environment while minimizing business impact.</li>
+
+        <li><strong>Advanced Troubleshooting:</strong> Perform root cause analysis for complex Windows, Microsoft 365, Outlook, OneDrive, hardware, imaging, and application issues, implementing permanent solutions that reduce repeat incidents.</li>
+
+        <li><strong>Endpoint Management:</strong> Support Windows 10/11 endpoints using SCCM/MECM and Microsoft Intune, ensuring device compliance, software deployment, patch management, and operational readiness.</li>
+
+        <li><strong>Infrastructure Support:</strong> Troubleshoot Dell docking stations, PXE imaging, BIOS/UEFI, Secure Boot, BitLocker recovery, and workstation hardware to maintain high system availability.</li>
+
+        <li><strong>Network & Security Collaboration:</strong> Partner with infrastructure and networking teams to resolve Cisco Catalyst 802.1X authentication issues, firewall access problems, and enterprise connectivity challenges.</li>
+
+        <li><strong>Operational Excellence:</strong> Maintain availability of business-critical systems by proactively identifying recurring issues, reducing ticket backlog, and driving timely incident resolution.</li>
+
+        <li><strong>Knowledge Management:</strong> Create detailed ServiceNow work notes, technical documentation, troubleshooting guides, and knowledge base articles that improve team productivity and reduce escalations.</li>
+
+        <li><strong>Customer Experience:</strong> Provide clear communication and regular status updates throughout the incident lifecycle, ensuring a positive end-user experience and high customer satisfaction.</li>
+
+        <li><strong>Process Improvement & Automation:</strong> Support change management activities, recommend workflow improvements, and identify automation opportunities that reduce manual effort and improve operational efficiency.</li>
+
+        <li><strong>Cross-Functional Collaboration:</strong> Work closely with desktop engineering, networking, security, and infrastructure teams to resolve enterprise-wide technical issues and improve service stability.</li>
+
+        <li><strong>Project Leadership:</strong> Led the creation of a walk-in support awareness campaign, including QR-code help desk resources that increased employee self-service adoption.</li>
+
+    </ul>
+</div>
+
+                    <div class="timeline-item aos-slide-up">
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Regular Student IT
@@ -1663,42 +664,24 @@
                                 2021</span>
                         </div>
                         <ul class="timeline-achievements">
-                            <li><strong>Professional Development:</strong>
-                                Successfully completed comprehensive CIS Academy
-                                Training and was deployed to Black & Veatch
-                                Application Packaging Project</li>
-                            <li><strong>Package Development Excellence:</strong>
-                                Created 110+ packages using PowerShell
-                                Application Deployment Toolkit (PSADT) over 23
-                                months, consistently meeting client requirements
-                                and project timelines</li>
-                            <li><strong>SCCM Configuration &
-                                    Deployment:</strong> Configured packaged
-                                applications in System
-                                Center Configuration Manager (SCCM) for
-                                efficient deployment and advertisement to
-                                end-users</li>
-                            <li><strong>Cost Optimization Initiative:</strong>
-                                Created Bentley V8i Products removal packages to
-                                uninstall applications from inactive users'
-                                machines, reducing license costs and securing
-                                Bentley Connect Apps discounts</li>
-                            <li><strong>Quality Assurance & Process
-                                    Management:</strong> Performed internal QA
-                                testing,
-                                coordinated with Project Managers for User
-                                Acceptance Testing (UAT) and pilot user
-                                deployment
-                            </li>
-                            <li><strong>Active Directory Management:</strong>
-                                Created AD groups and configured query rules for
-                                available collections, ensuring proper user
-                                access and application distribution</li>
-                            <li><strong>Change Management:</strong> Created and
-                                managed change requests for final deployment to
-                                end-users, ensuring compliance with
-                                organizational deployment protocols</li>
-                        </ul>
+    <li><strong>Application Packaging:</strong> Developed over <strong>110 enterprise application packages</strong> using PowerShell Application Deployment Toolkit (PSADT), consistently meeting customer requirements and deployment timelines.</li>
+
+    <li><strong>SCCM Administration:</strong> Configured, tested, and deployed applications through Microsoft Endpoint Configuration Manager (SCCM), ensuring successful enterprise-wide software distribution.</li>
+
+    <li><strong>Automation:</strong> Developed custom PowerShell scripts to automate installation, configuration, validation, and software deployment processes, reducing manual effort.</li>
+
+    <li><strong>Incident Resolution:</strong> Investigated application installation failures and deployment issues, performing troubleshooting and corrective actions to restore services quickly.</li>
+
+    <li><strong>Quality Assurance:</strong> Performed package validation, internal QA testing, User Acceptance Testing (UAT), and pilot deployments before production releases.</li>
+
+    <li><strong>Change Management:</strong> Created deployment change requests, coordinated implementation windows, and supported production releases while minimizing operational impact.</li>
+
+    <li><strong>Active Directory Administration:</strong> Created AD security groups, configured collection query rules, and managed deployment permissions for enterprise software distribution.</li>
+
+    <li><strong>Knowledge Sharing:</strong> Authored deployment documentation and installation procedures to improve team collaboration and reduce onboarding time.</li>
+
+    <li><strong>Continuous Improvement:</strong> Supported process optimization initiatives that improved deployment consistency, operational efficiency, and overall service quality.</li>
+</ul>
                     </div>
                 </div>
             </div>
@@ -1724,7 +707,7 @@
                     <div class="contact-card aos-zoom-in">
                         <i class="fas fa-phone"></i>
                         <h4>Phone</h4>
-                        <p>+1 (405) 590-8725</p>
+                        <p>+1 (612) 298-7083</p>
 
                     </div>
                     <div class="contact-card aos-zoom-in">
@@ -1745,7 +728,7 @@
                         <i class="fas fa-envelope"></i>
                         Send Email
                     </a>
-                    <a href="tel:+14055908725"
+                    <a href="tel:+16122987083"
                         class="btn btn-secondary aos-fade">
                         <i class="fas fa-phone"></i>
                         Call Now
@@ -1760,434 +743,7 @@
             <i class="fas fa-arrow-up"></i>
         </a>
 
-        <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Scroll to top button functionality
-        const scrollTopBtn = document.getElementById('scrollTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('show');
-            } else {
-                scrollTopBtn.classList.remove('show');
-            }
-        });
-
-        scrollTopBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Animate on scroll logic
-        function animateOnScroll() {
-            const animatedElems = document.querySelectorAll('.aos-fade, .aos-slide-up, .aos-zoom-in, .aos-flip, .aos-rotate');
-            const windowHeight = window.innerHeight;
-            animatedElems.forEach(elem => {
-                const rect = elem.getBoundingClientRect();
-                if (rect.top <= windowHeight - 80 && rect.bottom >= 0) {
-                    elem.classList.add('aos-in-view');
-                } else {
-                    elem.classList.remove('aos-in-view');
-                }
-            });
-        }
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('resize', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-
-        // Existing IntersectionObserver for fade-in-up on sections
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Mobile menu toggle (if you want to add it later)
-        const createMobileMenu = () => {
-            const nav = document.querySelector('.nav');
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.createElement('button');
-            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-            hamburger.className = 'hamburger';
-            hamburger.style.cssText = `
-                display: none;
-                background: none;
-                border: none;
-                font-size: 1.5rem;
-                color: var(--primary);
-                cursor: pointer;
-                @media (max-width: 768px) {
-                    display: block;
-                }
-            `;
-            nav.appendChild(hamburger);
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        };
-        createMobileMenu();
-
-        // Add some interactive effects
-        document.querySelectorAll('.project-card, .skill-card, .timeline-item').forEach(card => {
-            card.addEventListener('mouseenter', function () {
-                this.style.transform = 'translateY(-8px)';
-            });
-            card.addEventListener('mouseleave', function () {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Typing effect for hero title (optional enhancement)
-        const typeWriter = (element, text, speed = 100) => {
-            let i = 0;
-            element.innerHTML = '';
-            const timer = setInterval(() => {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                } else {
-                    clearInterval(timer);
-                }
-            }, speed);
-        };
-        window.addEventListener('load', () => {
-            const heroTitle = document.querySelector('.hero-content h1');
-            const originalText = heroTitle.textContent;
-            typeWriter(heroTitle, originalText, 100);
-        });
-
-        // Progress bar functionality
-        const progressBar = document.querySelector('.progress-bar');
-
-        function updateProgressBar() {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            progressBar.style.width = scrollPercent + '%';
-        }
-
-        window.addEventListener('scroll', updateProgressBar);
-        window.addEventListener('load', updateProgressBar);
-
-        // Dark mode toggle functionality
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-
-        // Get saved theme from localStorage or default to light
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        html.setAttribute('data-theme', savedTheme);
-
-        // Update button icon based on current theme
-        function updateThemeIcon() {
-            const currentTheme = html.getAttribute('data-theme');
-            const icon = themeToggle.querySelector('i');
-
-            if (currentTheme === 'dark') {
-                icon.className = 'fas fa-sun';
-                themeToggle.setAttribute('aria-label', 'Switch to light mode');
-            } else {
-                icon.className = 'fas fa-moon';
-                themeToggle.setAttribute('aria-label', 'Switch to dark mode');
-            }
-        }
-
-        // Initialize theme icon
-        updateThemeIcon();
-
-        // Toggle theme on button click
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon();
-        });
-
-        // Dynamic background shapes animation
-        class DynamicShape {
-            constructor(element) {
-                this.element = element;
-                this.initialX = parseFloat(getComputedStyle(element).left) || 0;
-                this.initialY = parseFloat(getComputedStyle(element).top) || 0;
-                this.currentX = this.initialX;
-                this.currentY = this.initialY;
-                this.targetX = this.initialX;
-                this.targetY = this.initialY;
-                this.rotation = 0;
-                this.scale = 1;
-                this.speed = 0.02 + Math.random() * 0.03; // Random speed between 0.02 and 0.05
-                this.updateInterval = 3000 + Math.random() * 4000; // Update every 3-7 seconds
-                this.lastUpdate = Date.now();
-
-                this.animate();
-            }
-
-            animate() {
-                const now = Date.now();
-                const deltaTime = now - this.lastUpdate;
-
-                // Smooth interpolation towards target
-                this.currentX += (this.targetX - this.currentX) * this.speed;
-                this.currentY += (this.targetY - this.currentY) * this.speed;
-
-                // Update rotation and scale
-                this.rotation += 0.5;
-                this.scale = 0.8 + Math.sin(now * 0.001) * 0.3; // Breathing effect
-
-                // Apply transforms
-                this.element.style.transform = `translate(${this.currentX - this.initialX}px, ${this.currentY - this.initialY}px) rotate(${this.rotation}deg) scale(${this.scale})`;
-
-                // Set new random target periodically
-                if (deltaTime > this.updateInterval) {
-                    this.setNewTarget();
-                    this.lastUpdate = now;
-                    this.updateInterval = 3000 + Math.random() * 4000;
-                }
-
-                requestAnimationFrame(() => this.animate());
-            }
-
-            setNewTarget() {
-                const maxOffset = 100; // Maximum movement range
-                this.targetX = this.initialX + (Math.random() - 0.5) * maxOffset * 2;
-                this.targetY = this.initialY + (Math.random() - 0.5) * maxOffset * 2;
-
-                // Keep shapes within viewport bounds
-                const rect = this.element.getBoundingClientRect();
-                const viewportWidth = window.innerWidth;
-                const viewportHeight = window.innerHeight;
-
-                if (this.targetX < 0) this.targetX = Math.max(0, this.targetX + maxOffset);
-                if (this.targetX + rect.width > viewportWidth) this.targetX = Math.min(viewportWidth - rect.width, this.targetX - maxOffset);
-                if (this.targetY < 0) this.targetY = Math.max(0, this.targetY + maxOffset);
-                if (this.targetY + rect.height > viewportHeight) this.targetY = Math.min(viewportHeight - rect.height, this.targetY - maxOffset);
-            }
-        }
-
-        // Initialize dynamic shapes
-        function initDynamicShapes() {
-            const shapes = document.querySelectorAll('.bg-shape');
-            shapes.forEach(shape => {
-                new DynamicShape(shape);
-            });
-        }
-
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', initDynamicShapes);
-
-        // Reinitialize on window resize
-        window.addEventListener('resize', () => {
-            // Small delay to avoid excessive reinitialization
-            setTimeout(initDynamicShapes, 100);
-        });
-
-        // Neural Network Elements
-        class NeuralNetwork {
-            constructor() {
-                this.nodes = [];
-                this.connections = [];
-                this.canvas = null;
-                this.ctx = null;
-                this.animationId = null;
-                this.nodeCount = 15;
-                this.connectionCount = 25;
-                this.createCanvas();
-                this.createNodes();
-                this.createConnections();
-                this.animate();
-            }
-
-            createCanvas() {
-                this.canvas = document.createElement('canvas');
-                this.canvas.className = 'neural-network-canvas';
-                this.canvas.style.cssText = `
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: -2;
-                    pointer-events: none;
-                    opacity: 0.6;
-                `;
-                document.body.appendChild(this.canvas);
-                this.ctx = this.canvas.getContext('2d');
-                this.resizeCanvas();
-            }
-
-            resizeCanvas() {
-                this.canvas.width = window.innerWidth;
-                this.canvas.height = window.innerHeight;
-            }
-
-            createNodes() {
-                for (let i = 0; i < this.nodeCount; i++) {
-                    this.nodes.push({
-                        x: Math.random() * this.canvas.width,
-                        y: Math.random() * this.canvas.height,
-                        vx: (Math.random() - 0.5) * 0.5,
-                        vy: (Math.random() - 0.5) * 0.5,
-                        radius: 2 + Math.random() * 3,
-                        opacity: 0.3 + Math.random() * 0.4,
-                        pulse: Math.random() * Math.PI * 2
-                    });
-                }
-            }
-
-            createConnections() {
-                for (let i = 0; i < this.connectionCount; i++) {
-                    const node1 = this.nodes[Math.floor(Math.random() * this.nodes.length)];
-                    const node2 = this.nodes[Math.floor(Math.random() * this.nodes.length)];
-                    if (node1 !== node2) {
-                        this.connections.push({
-                            node1: node1,
-                            node2: node2,
-                            opacity: 0.1 + Math.random() * 0.2,
-                            active: false
-                        });
-                    }
-                }
-            }
-
-            updateNodes() {
-                this.nodes.forEach(node => {
-                    node.x += node.vx;
-                    node.y += node.vy;
-                    node.pulse += 0.02;
-
-                    // Bounce off edges
-                    if (node.x <= 0 || node.x >= this.canvas.width) node.vx *= -1;
-                    if (node.y <= 0 || node.y >= this.canvas.height) node.vy *= -1;
-
-                    // Keep nodes in bounds
-                    node.x = Math.max(0, Math.min(this.canvas.width, node.x));
-                    node.y = Math.max(0, Math.min(this.canvas.height, node.y));
-                });
-            }
-
-            draw() {
-                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-                // Draw connections
-                this.connections.forEach(connection => {
-                    const dx = connection.node1.x - connection.node2.x;
-                    const dy = connection.node1.y - connection.node2.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < 200) { // Only draw connections within range
-                        const opacity = connection.opacity * (1 - distance / 200);
-                        this.ctx.strokeStyle = `rgba(102, 126, 234, ${opacity})`;
-                        this.ctx.lineWidth = 1;
-                        this.ctx.beginPath();
-                        this.ctx.moveTo(connection.node1.x, connection.node1.y);
-                        this.ctx.lineTo(connection.node2.x, connection.node2.y);
-                        this.ctx.stroke();
-                    }
-                });
-
-                // Draw nodes
-                this.nodes.forEach(node => {
-                    const pulseScale = 1 + Math.sin(node.pulse) * 0.3;
-                    const currentRadius = node.radius * pulseScale;
-
-                    // Outer glow
-                    const gradient = this.ctx.createRadialGradient(
-                        node.x, node.y, 0,
-                        node.x, node.y, currentRadius * 2
-                    );
-                    gradient.addColorStop(0, `rgba(102, 126, 234, ${node.opacity})`);
-                    gradient.addColorStop(1, 'rgba(102, 126, 234, 0)');
-
-                    this.ctx.fillStyle = gradient;
-                    this.ctx.beginPath();
-                    this.ctx.arc(node.x, node.y, currentRadius * 2, 0, Math.PI * 2);
-                    this.ctx.fill();
-
-                    // Inner node
-                    this.ctx.fillStyle = `rgba(102, 126, 234, ${node.opacity * 1.5})`;
-                    this.ctx.beginPath();
-                    this.ctx.arc(node.x, node.y, currentRadius, 0, Math.PI * 2);
-                    this.ctx.fill();
-                });
-            }
-
-            animate() {
-                this.updateNodes();
-                this.draw();
-                this.animationId = requestAnimationFrame(() => this.animate());
-            }
-
-            destroy() {
-                if (this.animationId) {
-                    cancelAnimationFrame(this.animationId);
-                }
-                if (this.canvas && this.canvas.parentNode) {
-                    this.canvas.parentNode.removeChild(this.canvas);
-                }
-            }
-        }
-
-        // Initialize neural network
-        let neuralNetwork = null;
-
-        function initNeuralNetwork() {
-            if (neuralNetwork) {
-                neuralNetwork.destroy();
-            }
-            neuralNetwork = new NeuralNetwork();
-        }
-
-        // Initialize neural network when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(initNeuralNetwork, 1000); // Delay to ensure page is fully loaded
-        });
-
-        // Handle theme changes for neural network
-        const themeObserver = new MutationObserver(() => {
-            if (neuralNetwork) {
-                // Update colors based on theme
-                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                // Neural network colors are handled in the draw method
-            }
-        });
-        themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-
-        // Reinitialize on window resize
-        window.addEventListener('resize', () => {
-            if (neuralNetwork) {
-                neuralNetwork.resizeCanvas();
-            }
-        });
-
-    </script>
+       <script src="script.js"></script>
     </body>
 
 </html>
